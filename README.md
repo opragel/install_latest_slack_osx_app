@@ -6,8 +6,8 @@ How the script works:
 
 2. Stores the Slack app zip in /tmp
 
-3. Extracts the zip contents to /tmp. Normal use does not require user to inspect the /tmp
+3. Extracts the zip contents to /tmp. Normal use does not require user to inspect the /tmp directory
 
-4. Moves the Slack app from /tmp to /Applications and sets the owner to root:admin
+4. Checks whether Slack is running, removes existing Slack app, moves new Slack app from /tmp to /Applications and sets the owner to root:admin
 
 5. Removes the Slack app zip from /tmp
