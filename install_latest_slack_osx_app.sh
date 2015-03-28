@@ -11,7 +11,7 @@ printf "Slack auto-install / update script\n\n"
 # Constants
 
 SLACK_DOWNLOAD_URL="https://slack.com/ssb/download-osx"
-SLACK_10_6_DOWNLOAD_URL="https://slack.com/ssb/download-osx"
+SLACK_10_6_DOWNLOAD_URL="https://slack.com/ssb/download-osx-10-6"
 
 SLACK_ZIP_PATH="/tmp/Slack.app.zip"
 SLACK_UNZIP_DIRECTORY="/tmp"
