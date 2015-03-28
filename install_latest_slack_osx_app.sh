@@ -1,8 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Downloads and installs the latest version of Slack for OS X
 
-printf "Running Slack auto-install/update script\n\n"
+set -o errexit
+set -o pipefail
+set -o nounset
+
+printf "Slack auto-install / update script\n\n"
 
 # Constants
 
@@ -21,6 +25,7 @@ osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
 if [ "$osvers" -lt 6 ]; then
   printf "Slack is not available for Mac OS X 10.5.8 or earlier\n"
 else
+  rm -rf "$SLACK_ZIP_PATH" "$SLACK_APP_UNZIPPED_PATH"
   if [ "$osvers" -lt 7 ]; then
     printf "Downloading Slack for Mac OS X 10.6.8\n"
     /usr/bin/curl --retry 3 -L "$SLACK_10_6_DOWNLOAD_URL" -o "$SLACK_ZIP_PATH"
@@ -29,7 +34,7 @@ else
     /usr/bin/curl --retry 3 -L "$SLACK_DOWNLOAD_URL" -o "$SLACK_ZIP_PATH"
   fi
   /usr/bin/unzip -q "$SLACK_ZIP_PATH" -d "$SLACK_UNZIP_DIRECTORY"
-  if [ ! -z "$(pgrep 'Slack')" ]; then
+  if pgrep 'Slack'; then
     printf "Error: Slack is currently running!\n"
   else
     if [ -d "$SLACK_APP_PATH" ]; then
