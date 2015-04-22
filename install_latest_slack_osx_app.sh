@@ -6,9 +6,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-printf "Slack auto-install / update script\n\n"
-
-# Constants
+printf "Slack auto-install script for OS X\n\n"
 
 SLACK_DOWNLOAD_URL="https://slack.com/ssb/download-osx"
 SLACK_10_6_DOWNLOAD_URL="https://slack.com/ssb/download-osx-10-6"
