@@ -2,10 +2,6 @@
 
 # Downloads and installs the latest version of Slack for OS X
 
-set -o errexit
-set -o pipefail
-set -o nounset
-
 printf "Slack auto-install script for OS X\n\n"
 
 SLACK_DOWNLOAD_URL="https://slack.com/ssb/download-osx"
