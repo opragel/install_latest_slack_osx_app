@@ -44,4 +44,3 @@ else
   fi
 fi
 printf "Exiting...\n"
-exit 0
