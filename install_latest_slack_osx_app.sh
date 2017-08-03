@@ -21,7 +21,6 @@ if [ -d "$APP_PATH" ]; then
     fi
 fi
 
-# OS X major release version
 osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
 
 if [ "$osvers" -lt 7 ]; then
