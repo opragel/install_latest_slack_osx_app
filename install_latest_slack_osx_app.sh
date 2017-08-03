@@ -24,7 +24,7 @@ fi
 osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
 
 if [ "$osvers" -lt 7 ]; then
-    printf "Slack is not available for Mac OS X 10.6 or earlier\n"
+    printf "Slack is not available for Mac OS X 10.6 or earlier"
     exit 403
 elif [ "$osvers" -ge 7 ]; then
     finalDownloadUrl=$(curl "$DOWNLOAD_URL" -s -L -I -o /dev/null -w '%{url_effective}')
@@ -41,7 +41,7 @@ rm -rf "$slackZipPath" "$SLACK_UNZIP_DIRECTORY"
 rm -f "$slackZipPath"
 
 if pgrep 'Slack'; then
-    printf "Error: Slack is currently running!\n"
+    printf "Error: Slack is currently running!"
     exit 409
 else
     if [ -d "$APP_PATH" ]; then
